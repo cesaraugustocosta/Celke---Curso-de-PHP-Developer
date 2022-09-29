@@ -1,0 +1,16 @@
+{
+    "description": "Celke Projeto PHP OO",
+    "authors": [
+        {
+            "name": "Cesar Augusto",
+            "email": "cesaraug76@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+           "Sts\\" :"app/sts",
+           "Core\\":"core" 
+        }
+    },
+    "require": {}
+}

@@ -19,15 +19,25 @@ class ConfigController
                 $this->urlController = $this->urlConjunto[0];
                 $this->urlMetodo = $this->urlConjunto[1];
             else:
-                $this->urlController = "erro";
+                $this->urlController = "Erro";
                 $this->urlMetodo = "index";
             endif;            
             
         else:
-            $this->urlController = "home";
+            $this->urlController = "Home";
             $this->urlMetodo     = "index";
         endif;
 
         echo "Controller: {$this->urlController} - Metodo: {$this->urlMetodo}<br/>";
+    }
+
+    public function carregar(){
+       $urlController = ucwords($this->urlController);
+       $classe = "\\Sts\\Controllers\\" .$urlController;
+        echo $classe . "<br>";
+       $classeCarregar = new $classe;
+       $classeCarregar->index();
+
+    
     }
 }
